@@ -1,23 +1,20 @@
 import DiamondCard from "./DiamondCard";
-export default function DiamondContainer() {
-  return (
-    <div className="DiamondContainer">
-      <DiamondCard
-        image="src\assets\pexels-the-glorious-studio-10475791.jpg"
-        productName="Princess"
-        price="$ 1,350"
-      />
-      <DiamondCard
-        image="src\assets\pexels-the-glorious-studio-10475793.jpg"
-        productName="Swan"
-        price="$ 1,420"
-      />
-      <DiamondCard
-        image="src\assets\pexels-the-glorious-studio-10475794.jpg"
-        productName="Ice Lake"
-        price="$ 1,780"
-        sale={true}
-      />
+import type {DiamondCardProps} from "../data/data";
+
+interface DiamondContainerProps{
+  data:DiamondCardProps[];
+}
+
+export default function DiamondContainer({data}:DiamondContainerProps) {
+  return(
+
+     <div className = "DiamondContainer">
+      {data.map((listing) => (
+        <DiamondCard 
+          key = {listing.id}
+          {...listing}
+        />
+      ))}
     </div>
   );
 }

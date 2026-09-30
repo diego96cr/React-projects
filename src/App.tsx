@@ -1,13 +1,13 @@
 import "./App.css";
 import DiamondContainer from "./Components/DiamondContainer";
+import data from "./data/data";
 
-function App() {
-  return (
+function App(){
+  return(
     <>
       <h1>Diamond World</h1>
-      <DiamondContainer />
+      <DiamondContainer data ={data}/>
     </>
   );
 }
-
 export default App;
